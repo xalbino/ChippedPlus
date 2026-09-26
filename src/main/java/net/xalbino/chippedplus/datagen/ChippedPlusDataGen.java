@@ -1,9 +1,9 @@
 
 
-package net.xalbino.chippedextras.datagen;
+package net.xalbino.chippedplus.datagen;
 
 
-import net.xalbino.chippedextras.ChippedExtras;
+import net.xalbino.chippedplus.ChippedPlus;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent; // Correct 1.18.2 Import
@@ -13,10 +13,10 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 @EventBusSubscriber(
         bus = Bus.MOD,
-        modid = ChippedExtras.MODID
+        modid = ChippedPlus.MODID
 )
-public class ChippedExtrasDataGen {
-    public ChippedExtrasDataGen() {
+public class ChippedPlusDataGen {
+    public ChippedPlusDataGen() {
     }
 
     @SubscribeEvent

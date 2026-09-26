@@ -1,10 +1,10 @@
-package net.xalbino.chippedextras.datagen;
+package net.xalbino.chippedplus.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import net.xalbino.chippedextras.ChippedExtras;
+import net.xalbino.chippedplus.ChippedPlus;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -99,7 +99,7 @@ public class VariantModelStateProvider implements DataProvider {
 
     @Override
     public String getName() {
-        return "ChippedExtras Models & Blockstates (optimized)";
+        return "ChippedPlus Models & Blockstates (optimized)";
     }
 
     private static String resolveBestTexture(ResourceLocation baseBlock) {
@@ -171,17 +171,17 @@ public class VariantModelStateProvider implements DataProvider {
     }
 
     private void saveModel(HashCache cache, String name, Map<String, Object> json) throws IOException {
-        Path p = generator.getOutputFolder().resolve("assets/" + ChippedExtras.MODID + "/models/block/" + name + ".json");
+        Path p = generator.getOutputFolder().resolve("assets/" + ChippedPlus.MODID + "/models/block/" + name + ".json");
         DataProvider.save(GSON, cache, GSON.toJsonTree(json), p);
     }
 
     private void saveItemModel(HashCache cache, String name, Map<String, Object> json) throws IOException {
-        Path p = generator.getOutputFolder().resolve("assets/" + ChippedExtras.MODID + "/models/item/" + name + ".json");
+        Path p = generator.getOutputFolder().resolve("assets/" + ChippedPlus.MODID + "/models/item/" + name + ".json");
         DataProvider.save(GSON, cache, GSON.toJsonTree(json), p);
     }
 
     private void saveBlockstate(HashCache cache, String name, Map<String, Object> json) throws IOException {
-        Path p = generator.getOutputFolder().resolve("assets/" + ChippedExtras.MODID + "/blockstates/" + name + ".json");
+        Path p = generator.getOutputFolder().resolve("assets/" + ChippedPlus.MODID + "/blockstates/" + name + ".json");
         DataProvider.save(GSON, cache, GSON.toJsonTree(json), p);
     }
 
@@ -191,7 +191,7 @@ public class VariantModelStateProvider implements DataProvider {
         return loc != null ? loc.getPath() : null;
     }
 
-    private static String modBlock(String name) { return ChippedExtras.MODID + ":block/" + name; }
+    private static String modBlock(String name) { return ChippedPlus.MODID + ":block/" + name; }
 
     private static Map<String, Object> itemParent(String parent) { return map("parent", parent); }
     private static Map<String, Object> cubeAllModel(String tex) {

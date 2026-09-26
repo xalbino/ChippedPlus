@@ -1,9 +1,8 @@
-package net.xalbino.chippedextras;
+package net.xalbino.chippedplus;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,10 +13,10 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.xalbino.chippedextras.block.FixedSlabBlock;
-import net.xalbino.chippedextras.block.FixedStairBlock;
-import net.xalbino.chippedextras.block.FixedWallBlock;
-import net.xalbino.chippedextras.item.ChippedVariantBlockItem;
+import net.xalbino.chippedplus.block.FixedSlabBlock;
+import net.xalbino.chippedplus.block.FixedStairBlock;
+import net.xalbino.chippedplus.block.FixedWallBlock;
+import net.xalbino.chippedplus.item.ChippedVariantBlockItem;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,14 +45,14 @@ public class GeneratedRegistry {
         final List<Entry> entries = loadEntries();
 
         if (entries.isEmpty()) {
-            final boolean isDataGen = Boolean.getBoolean("chippedextras.datagen");
+            final boolean isDataGen = Boolean.getBoolean("chippedplus.datagen");
 
             if (isDataGen) {
                 return;
             }
 
             System.out.println(
-                    "[chippedextras] WARNING: registry.json "
+                    "[chippedplus] WARNING: registry.json "
                             + "missing/empty; skipping dynamic registration."
             );
 
@@ -62,7 +61,7 @@ public class GeneratedRegistry {
 
 
         System.out.println(
-                "[chippedextras] registering "
+                "[chippedplus] registering "
                         + entries.size()
                         + " variants"
         );
@@ -77,7 +76,7 @@ public class GeneratedRegistry {
 
             if (baseRL == null) {
                 System.out.println(
-                        "[chippedextras] WARNING: invalid base block: "
+                        "[chippedplus] WARNING: invalid base block: "
                                 + e.base
                 );
 
@@ -104,7 +103,7 @@ public class GeneratedRegistry {
                             .sound(sound);
 
             final Item.Properties itemProps =
-                    new Item.Properties().tab(ChippedExtras.CHIPPEDEXTRAS_TAB);
+                    new Item.Properties().tab(ChippedPlus.CHIPPEDEXTRAS_TAB);
 
             final String displayPath = baseRL.getPath();
 
@@ -200,7 +199,7 @@ public class GeneratedRegistry {
                 InputStream in =
                         GeneratedRegistry.class.getResourceAsStream(
                                 "/assets/"
-                                        + ChippedExtras.MODID
+                                        + ChippedPlus.MODID
                                         + "/generated/registry.json"
                         )
         ) {
@@ -223,7 +222,7 @@ public class GeneratedRegistry {
 
         } catch (Exception ex) {
             System.out.println(
-                    "[chippedextras] ERROR reading registry.json: "
+                    "[chippedplus] ERROR reading registry.json: "
                             + ex
             );
 

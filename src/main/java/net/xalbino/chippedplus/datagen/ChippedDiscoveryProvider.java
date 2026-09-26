@@ -1,4 +1,4 @@
-package net.xalbino.chippedextras.datagen;
+package net.xalbino.chippedplus.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,7 +7,7 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.xalbino.chippedextras.ChippedExtras;
+import net.xalbino.chippedplus.ChippedPlus;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -59,7 +59,7 @@ public class ChippedDiscoveryProvider implements DataProvider {
             totalChippedBlocks++;
             if (ForgeRegistries.ITEMS.getValue(dbg) != null) chippedBlocksWithItem++;
         }
-        System.out.println("[" + ChippedExtras.MODID + "] DIAGNOSTIC: " + totalChippedBlocks
+        System.out.println("[" + ChippedPlus.MODID + "] DIAGNOSTIC: " + totalChippedBlocks
                 + " total chipped: blocks, " + chippedBlocksWithItem + " of them have a registered Item");
         // --- END TEMP DIAGNOSTIC ---
 
@@ -84,19 +84,19 @@ public class ChippedDiscoveryProvider implements DataProvider {
             if (!isBrickStoneOrTile(tokens)) return;
 
             final String base = rl.toString();
-            final String slab = new ResourceLocation(ChippedExtras.MODID, path + "_slab").toString();
-            final String stairs = new ResourceLocation(ChippedExtras.MODID, path + "_stairs").toString();
+            final String slab = new ResourceLocation(ChippedPlus.MODID, path + "_slab").toString();
+            final String stairs = new ResourceLocation(ChippedPlus.MODID, path + "_stairs").toString();
 
             // Wall filter for certain blocks
             final boolean allowWall = !containsAny(tokens, Set.of("planks", "plank", "prismarine"));
-            final String wall = allowWall ? new ResourceLocation(ChippedExtras.MODID, path + "_wall").toString() : null;
+            final String wall = allowWall ? new ResourceLocation(ChippedPlus.MODID, path + "_wall").toString() : null;
 
             entries.add(new Entry(base, slab, stairs, wall));
         });
 
-        final Path outPath = generator.getOutputFolder().resolve("assets/" + ChippedExtras.MODID + "/generated/registry.json");
+        final Path outPath = generator.getOutputFolder().resolve("assets/" + ChippedPlus.MODID + "/generated/registry.json");
         final Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
-        System.out.println("[" + ChippedExtras.MODID + "] discovered " + entries.size() + " chipped base blocks");
+        System.out.println("[" + ChippedPlus.MODID + "] discovered " + entries.size() + " chipped base blocks");
 
         DataProvider.save(gson, cache, gson.toJsonTree(entries), outPath);
     }
@@ -104,7 +104,7 @@ public class ChippedDiscoveryProvider implements DataProvider {
     public List<Entry> discovered() { return entries; }
 
     @Override
-    public String getName() { return "ChippedExtras Discovery & Registry List"; }
+    public String getName() { return "ChippedPlus Discovery & Registry List"; }
 
     public static record Entry(String base, String slab, String stairs, String wall) {}
 

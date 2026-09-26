@@ -1,4 +1,4 @@
-package net.xalbino.chippedextras;
+package net.xalbino.chippedplus;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
