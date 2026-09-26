@@ -1,8 +1,8 @@
-package net.xalbino.chippedextras.datagen;
+package net.xalbino.chippedplus.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.xalbino.chippedextras.ChippedExtras;
+import net.xalbino.chippedplus.ChippedPlus;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -60,11 +60,11 @@ public class VariantRecipeProvider implements DataProvider {
 
     @Override
     public String getName() {
-        return "ChippedExtras Recipes";
+        return "ChippedPlus Recipes";
     }
 
     private void saveRecipe(HashCache cache, String rel, Map<String, Object> json) throws IOException {
-        Path p = generator.getOutputFolder().resolve("data/" + ChippedExtras.MODID + "/recipes/" + rel + ".json");
+        Path p = generator.getOutputFolder().resolve("data/" + ChippedPlus.MODID + "/recipes/" + rel + ".json");
         DataProvider.save(GSON, cache, GSON.toJsonTree(json), p);
     }
 

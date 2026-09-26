@@ -1,4 +1,4 @@
-package net.xalbino.chippedextras;
+package net.xalbino.chippedplus;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.NonNullList;
@@ -23,9 +23,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-@Mod(ChippedExtras.MODID)
-public class ChippedExtras {
-    public static final String MODID = "chippedextras";
+@Mod(ChippedPlus.MODID)
+public class ChippedPlus {
+    public static final String MODID = "chippedplus";
 
     private static final Logger LOGGER =
             LogUtils.getLogger();
@@ -43,7 +43,7 @@ public class ChippedExtras {
             );
 
     public static final CreativeModeTab CHIPPEDEXTRAS_TAB =
-            new CreativeModeTab("chippedextras") {
+            new CreativeModeTab("chippedplus") {
 
                 @Override
                 public void fillItemList(
@@ -78,14 +78,14 @@ public class ChippedExtras {
                 }
             };
 
-    public ChippedExtras() {
+    public ChippedPlus() {
         IEventBus modBus =
                 FMLJavaModLoadingContext
                         .get()
                         .getModEventBus();
 
         boolean isDataGen =
-                Boolean.getBoolean("chippedextras.datagen");
+                Boolean.getBoolean("chippedplus.datagen");
 
         if (!isDataGen) {
             GeneratedRegistry.bootstrapFromJson(
@@ -94,7 +94,7 @@ public class ChippedExtras {
             );
         } else {
             LOGGER.info(
-                    "[chippedextras] Datagen run detected: "
+                    "[chippedplus] Datagen run detected: "
                             + "skipping runtime bootstrapFromJson()"
             );
         }
@@ -122,7 +122,7 @@ public class ChippedExtras {
             ServerStartingEvent event
     ) {
         LOGGER.info(
-                "[chippedextras] Server starting"
+                "[chippedplus] Server starting"
         );
     }
     @Mod.EventBusSubscriber(

@@ -1,6 +1,6 @@
-package net.xalbino.chippedextras.datagen;
+package net.xalbino.chippedplus.datagen;
 
-import net.xalbino.chippedextras.ChippedExtras;
+import net.xalbino.chippedplus.ChippedPlus;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -15,7 +15,7 @@ public class VariantBlockTags extends BlockTagsProvider {
     private final ChippedDiscoveryProvider d;
 
     public VariantBlockTags(DataGenerator generator, ChippedDiscoveryProvider d, ExistingFileHelper efh) {
-        super(generator, ChippedExtras.MODID, efh);
+        super(generator, ChippedPlus.MODID, efh);
         this.d = d;
     }
 

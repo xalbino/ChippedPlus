@@ -1,8 +1,8 @@
-package net.xalbino.chippedextras.datagen;
+package net.xalbino.chippedplus.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import net.xalbino.chippedextras.ChippedExtras;
+import net.xalbino.chippedplus.ChippedPlus;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -33,7 +33,7 @@ public class VariantLootProvider implements DataProvider {
 
     @Override
     public String getName() {
-        return "ChippedExtras Loot (raw JSON)";
+        return "ChippedPlus Loot (raw JSON)";
     }
 
     private void saveBlockLoot(HashCache cache, String blockRL, Map<String, Object> json) throws IOException {
@@ -47,7 +47,7 @@ public class VariantLootProvider implements DataProvider {
         }
 
         String path = loc.getPath();
-        Path outPath = generator.getOutputFolder().resolve("data/" + ChippedExtras.MODID + "/loot_tables/blocks/" + path + ".json");
+        Path outPath = generator.getOutputFolder().resolve("data/" + ChippedPlus.MODID + "/loot_tables/blocks/" + path + ".json");
         DataProvider.save(GSON, cache, GSON.toJsonTree(json), outPath);
     }
 

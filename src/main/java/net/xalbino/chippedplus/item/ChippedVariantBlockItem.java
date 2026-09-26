@@ -1,4 +1,4 @@
-package net.xalbino.chippedextras.item;
+package net.xalbino.chippedplus.item;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

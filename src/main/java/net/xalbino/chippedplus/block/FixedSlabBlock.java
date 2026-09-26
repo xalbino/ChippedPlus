@@ -1,4 +1,4 @@
-package net.xalbino.chippedextras.block;
+package net.xalbino.chippedplus.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
